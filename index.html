@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding and viewport settings for responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Scoreboard</title>
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Authentication Container -->
+        <div id="auth-container" class="auth-container">
+            <!-- Tabs for switching between Login and Sign Up forms -->
+            <div class="tabs">
+                <button id="login-tab" class="active">Login</button>
+                <button id="signup-tab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p id="login-message" class="message"></p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" placeholder="Choose username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p id="signup-message" class="message"></p>
+            </form>
+        </div>
+
+        <!-- Result Scoreboard Container (Hidden by default) -->
+        <div id="scoreboard-container" class="scoreboard-container hidden">
+            <!-- Header with username display and logout button -->
+            <header>
+                <h1>Scoreboard</h1>
+                <div class="user-info">
+                    <span id="username-display"></span>
+                    <button id="logout-btn" class="btn-small">Logout</button>
+                </div>
+            </header>
+
+            <!-- Result Form for adding scores -->
+            <div class="result-form">
+                <h2 id="form-title">Add Result</h2>
+                <form id="result-form">
+                    <div class="form-row">
+                        <!-- Input for student name -->
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" placeholder="Enter name" required>
+                        </div>
+                        <!-- Dropdown for selecting subject -->
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="English">English</option>
+                                <option value="Gujarati">Gujarati</option>
+                                <option value="Maths">Maths</option>
+                                <option value="Science">Science</option>
+                                <option value="Social Science">Social Science</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <!-- Input for score -->
+                        <div class="form-group">
+                            <label for="score">Score</label>
+                            <input type="number" id="score" min="0" max="100" placeholder="0-100" required>
+                        </div>
+                    </div>
+                    <!-- Hidden input for result ID (used for editing results) -->
+                    <input type="hidden" id="result-id">
+                    <button type="submit" id="add-result-btn" class="btn">Add Result</button>
+                </form>
+            </div>
+
+            <!-- Controls for search/filtering results -->
+            <div class="controls">
+                <div class="search-filter">
+                    <input type="text" id="search-input" placeholder="Search Student...">
+                </div>
+            </div>
+
+            <!-- Table displaying results -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                </tbody>
+            </table>
+            <!-- Message displayed when no results are found -->
+            <p id="no-results" class="no-results hidden">No results found.</p>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
