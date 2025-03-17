@@ -20,20 +20,12 @@ signupForm.addEventListener('submit', handleSignup); // Signup form submission
 document.getElementById('logout-btn').addEventListener('click', handleLogout); // Logout button click
 resultForm.addEventListener('submit', handleResultSubmit); // Result form submission
 searchInput.addEventListener('input', showResults); // Handle search input to filter displayed results
-<<<<<<< Tabnine <<<<<<<
-/**//+
- * Handles the click event for the login tab button.//+
- * It shows the login form and hides the signup form,//+
- * and adds 'active' class to the login tab and removes it from the signup tab.//+
- *///+
 loginTab.addEventListener('click', () => {//+
     loginForm.classList.remove('hidden'); // Show the login form//+
     signupForm.classList.add('hidden'); // Hide the signup form//+
     loginTab.classList.add('active'); // Add 'active' class to the login tab//+
     signupTab.classList.remove('active'); // Remove 'active' class from the signup tab//+
-});//+
->>>>>>> Tabnine >>>>>>>// {"conversationId":"a94cb4b7-2a66-48cb-9d41-71c39d092d05","source":"instruct"}
-
+});//
 // Tab Switching with Color Change
 // Switch to login form
 loginTab.addEventListener('click', () => {
